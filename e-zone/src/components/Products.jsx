@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -24,55 +25,77 @@ const Products = () => {
   }, []);
 
   const Loading = () => {
-    return <><img src="/assets/load.svg"  height="50px" alt="Loading" /></>;
+    return (
+      <>
+        <img src="/assets/load.svg" height="50px" alt="Loading" />
+      </>
+    );
   };
 
-
   const filterProduct = (cat) => {
-      const updateList = data.filter((x)=>x.category === cat);
-      setFilter(updateList);
-  }
+    const updateList = data.filter((x) => x.category === cat);
+    setFilter(updateList);
+  };
 
   const ShowProducts = () => {
     return (
       <>
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
-          <button 
-          className="btn btn-outline-primary me-2"
-          onClick={() => setFilter(data)}
-          >All</button>
-          <button 
-          className="btn btn-outline-primary me-2"
-          onClick={() => filterProduct("women's clothing")}
-          >Women's clothing</button>
-          <button 
-          className="btn btn-outline-primary me-2"
-          onClick={() => filterProduct("men's clothing")}
-          >Men's clothing</button>
-          <button 
-          className="btn btn-outline-primary me-2"
-          onClick={() => filterProduct("jewelery")}
-          >Jewelery</button>
-          <button 
-          className="btn btn-outline-primary me-2"
-          onClick={() => filterProduct("electronics")}
-          >Electronics</button>
-
+          <button
+            className="btn btn-outline-primary me-2"
+            onClick={() => setFilter(data)}
+          >
+            All
+          </button>
+          <button
+            className="btn btn-outline-primary me-2"
+            onClick={() => filterProduct("women's clothing")}
+          >
+            Women's clothing
+          </button>
+          <button
+            className="btn btn-outline-primary me-2"
+            onClick={() => filterProduct("men's clothing")}
+          >
+            Men's clothing
+          </button>
+          <button
+            className="btn btn-outline-primary me-2"
+            onClick={() => filterProduct("jewelery")}
+          >
+            Jewelery
+          </button>
+          <button
+            className="btn btn-outline-primary me-2"
+            onClick={() => filterProduct("electronics")}
+          >
+            Electronics
+          </button>
         </div>
         {filter.map((product) => {
           return (
             <>
               <div className="col-md-3 mb-4">
                 <div className="card h-100 text-center p-4" key={product.id}>
-                  <img src={product.image} className="card-img-top" alt={product.title} height="300px" />
+                  <img
+                    src={product.image}
+                    className="card-img-top"
+                    alt={product.title}
+                    height="300px"
+                  />
                   <div className="card-body">
-                    <h5 className="card-title mb-0">{product.title.substring(0, 12)}</h5>
+                    <h5 className="card-title mb-0">
+                      {product.title.substring(0, 12)}
+                    </h5>
                     <p className="card-text lead fw-bold">
                       LKR. {product.price}
                     </p>
-                    <a href="##" className="btn btn-primary">
+                    <NavLink
+                      to={`/products/${product.id}`}
+                      className="btn btn-primary"
+                    >
                       Buy Now
-                    </a>
+                    </NavLink>
                   </div>
                 </div>
               </div>
