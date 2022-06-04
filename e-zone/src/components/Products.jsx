@@ -27,30 +27,51 @@ const Products = () => {
     return <><img src="/assets/load.svg"  height="50px" alt="Loading" /></>;
   };
 
+
+  const filterProduct = (cat) => {
+      const updateList = data.filter((x)=>x.category === cat);
+      setFilter(updateList);
+  }
+
   const ShowProducts = () => {
     return (
       <>
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
-          <button className="btn btn-outline-primary me-2">All</button>
-          <button className="btn btn-outline-primary me-2">CAT-1</button>
-          <button className="btn btn-outline-primary me-2">CAT-2</button>
-          <button className="btn btn-outline-primary me-2">CAT-3</button>
-          <button className="btn btn-outline-primary me-2">CAT-4</button>
+          <button 
+          className="btn btn-outline-primary me-2"
+          onClick={() => setFilter(data)}
+          >All</button>
+          <button 
+          className="btn btn-outline-primary me-2"
+          onClick={() => filterProduct("women's clothing")}
+          >Women's clothing</button>
+          <button 
+          className="btn btn-outline-primary me-2"
+          onClick={() => filterProduct("men's clothing")}
+          >Men's clothing</button>
+          <button 
+          className="btn btn-outline-primary me-2"
+          onClick={() => filterProduct("jewelery")}
+          >Jewelery</button>
+          <button 
+          className="btn btn-outline-primary me-2"
+          onClick={() => filterProduct("electronics")}
+          >Electronics</button>
+
         </div>
         {filter.map((product) => {
           return (
             <>
-              <div className="col-md-3">
-                <div className="card">
-                  <img src={product.image} className="card-img-top" alt={product.title} />
+              <div className="col-md-3 mb-4">
+                <div className="card h-100 text-center p-4" key={product.id}>
+                  <img src={product.image} className="card-img-top" alt={product.title} height="300px" />
                   <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
+                    <h5 className="card-title mb-0">{product.title.substring(0, 12)}</h5>
+                    <p className="card-text lead fw-bold">
+                      LKR. {product.price}
                     </p>
                     <a href="##" className="btn btn-primary">
-                      Go somewhere
+                      Buy Now
                     </a>
                   </div>
                 </div>

@@ -1,15 +1,22 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home.jsx';
 import  Navbar  from './components/Navbar/Navbar.jsx';
-
+import { Routes, Route, Link } from "react-router-dom";
+import Products from './components/Products.jsx';
 
 function App() {
   return (
-    <div>
+    <>
      <Navbar/>
-     <Home/>
-    </div>
+    
+     <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+      </Routes>
+     
+    </>
   );
 }
 
-export default App;
+export default App; 
+
