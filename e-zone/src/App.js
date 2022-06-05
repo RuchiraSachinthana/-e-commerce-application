@@ -5,6 +5,8 @@ import { Routes, Route, Link } from "react-router-dom";
 import Products from "./components/Products.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Product from "./components/Product";
+import Contact from "./components/Contact";
+import About from "./components/About";
 
 function App() {
   return (
@@ -14,7 +16,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/About" element={<About />} />
         <Route path="/products/:id" element={<Product />} />
+
       </Routes>
 
       <Footer />
