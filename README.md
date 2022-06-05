@@ -56,7 +56,7 @@ npm start
 ```
 Once the command is done running, e-zone app will open on your local host on your default browser.
 ```html
-[npm start](https:// local host:3000)
+https:// local host:3000
 ```
 
  ## Required project functionalities  
