@@ -37,7 +37,7 @@ A working shopping cart for your React.js Application - Integrated with FakeStor
 - Dynamic counter for showing the cart value, and increasing item count as per user's interaction.
 - User can increase the amount of items, and total prices would be calculated as per the cart items.
 
-### How to run your application 
+### How to run this application 
  steps:
  
  ##### make sure that you are in the root directory of the project
