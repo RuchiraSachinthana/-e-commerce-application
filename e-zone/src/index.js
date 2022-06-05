@@ -5,6 +5,8 @@ import "./index.css";
 import App from "./App";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/font-awesome//css/font-awesome.min.css';
+import {Provider} from 'react-redux';
+import store from './redux/store';
 // import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
@@ -13,7 +15,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <Provider store={store}>
       <App />
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );
