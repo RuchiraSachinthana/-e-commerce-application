@@ -24,8 +24,11 @@ A working shopping cart for your React.js Application - Integrated with FakeStor
 - [Redux](https://redux.js.org/) for type checking and creating custom types.
 - [Node.js](https://nodejs.org/en/) for setting up the application environment.
 - [FakeStore](https://fakestoreapi.com/) for using their API and populating the application with sample data.
+- [Bootstrap](https://getbootstrap.com/) for styles.
+- [Github](github.com/) for version control and collaboration.
+- [Netlify](https://app.netlify.com/) for host the website.
 
-## Technologies
+
 The stak used for this project was
 - React.js with Redux
 - Node (npm) for package management
