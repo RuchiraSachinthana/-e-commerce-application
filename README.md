@@ -82,7 +82,7 @@ https:// local host:3000
  -  User can view the cart
  -  User can increase or decrease the product amount.
  -  Check Out functions.
- -  Create Contact us form and fuctions.
+ -  Create a Contact us form and functions.
  -  Create User and Admin Dashboads.
  -  Integrate User and Admin dashboards.
 
